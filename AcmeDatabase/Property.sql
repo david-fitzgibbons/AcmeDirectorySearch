@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Property]
 (
-	[Property] VARCHAR(50) NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+	[Property] VARCHAR(50) NOT NULL PRIMARY KEY, 
     [Value] NVARCHAR(MAX) NOT NULL
 )
