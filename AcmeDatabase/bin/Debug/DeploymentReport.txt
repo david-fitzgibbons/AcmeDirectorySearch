@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Address] (Table)
+       [dbo].[Property] (Table)
+       [dbo].[State] (Table)
+       [dbo].[User] (Table)
+       [dbo].[UserImage] (Table)
+       [dbo].[fk_address_state] (Foreign Key)
+       [dbo].[fk_user_address] (Foreign Key)
+       [dbo].[fk_userimage_user] (Foreign Key)
+       [dbo].[UserView] (View)
+       [dbo].[CreateUser] (Procedure)
+       [dbo].[GetUserImage] (Procedure)
+
+** Supporting actions

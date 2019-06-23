@@ -1,0 +1,6 @@
+C:\Users\dfitzgib\Desktop\Projects\HealthCatalyst\AcmeDirectorySearch\AcmeDatabase\bin\Debug\AcmeDatabase.dacpac
+C:\Users\dfitzgib\Desktop\Projects\HealthCatalyst\AcmeDirectorySearch\AcmeDatabase\obj\Debug\AcmeDatabase.sqlprojAssemblyReference.cache
+C:\Users\dfitzgib\Desktop\Projects\HealthCatalyst\AcmeDirectorySearch\AcmeDatabase\obj\Debug\AcmeDatabase.dll
+C:\Users\dfitzgib\Desktop\Projects\HealthCatalyst\AcmeDirectorySearch\AcmeDatabase\obj\Debug\AcmeDatabase.pdb
+C:\Users\dfitzgib\Desktop\Projects\HealthCatalyst\AcmeDirectorySearch\AcmeDatabase\bin\Debug\AcmeDatabase.dll
+C:\Users\dfitzgib\Desktop\Projects\HealthCatalyst\AcmeDirectorySearch\AcmeDatabase\bin\Debug\AcmeDatabase.pdb
