@@ -48,7 +48,7 @@
                          Order By ROUTINE_NAME
                 ";
 
-            List<string> tables = new List<string> { "CreateUser", "GetUserImage" };
+            List<string> tables = new List<string> { "CreateUser", "DeleteUser", "GetUserImage" };
 
             using (IDbConnection db = fixture.Db)
             {
