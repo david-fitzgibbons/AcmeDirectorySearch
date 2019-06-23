@@ -18,7 +18,7 @@ AS
 	DECLARE @UserId int;
 	
 	INSERT INTO [dbo].[Address](Street1, Street2, City, State, Zip)
-		SELECT @Street1, @Street2, @City, st.id, @Zip
+		SELECT @Street1, @Street2, @City, st.Id, @Zip
 		FROM [dbo].[State] st 
 		WHERE [state] = UPPER(@State)
 
