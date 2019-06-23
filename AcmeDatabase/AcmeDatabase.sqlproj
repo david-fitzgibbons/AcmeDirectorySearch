@@ -67,6 +67,7 @@
     <Build Include="UserView.sql" />
     <Build Include="GetUserImage.sql" />
     <Build Include="CreateUser.sql" />
+    <Build Include="DeleteUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AcmeDatabase.refactorlog" />

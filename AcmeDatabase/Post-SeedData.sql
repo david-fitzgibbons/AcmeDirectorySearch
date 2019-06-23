@@ -65,3 +65,37 @@ insert into dbo.State SELECT 'WA' WHERE NOT EXISTS (SELECT [State] FROM [State] 
 insert into dbo.State SELECT 'WI' WHERE NOT EXISTS (SELECT [State] FROM [State] WHERE [State] = 'WI') 
 insert into dbo.State SELECT 'WV' WHERE NOT EXISTS (SELECT [State] FROM [State] WHERE [State] = 'WV') 
 insert into dbo.State SELECT 'WY' WHERE NOT EXISTS (SELECT [State] FROM [State] WHERE [State] = 'WY') 
+
+
+DELETE FROM UserImage;
+DELETE FROM [User];
+DELETE FROM [Address];
+GO
+
+EXEC CreateUser  @FirstName='Josephine', @LastName='Darakjy', @Birthday='02/05/1969', @Interests='Sports', @Street1='4 B Blue Ridge Blvd',  @Street2 =NULL, @City='Brighton', @State='MI', @Zip='48116' 
+GO
+EXEC CreateUser  @FirstName='Art', @LastName='Venere', @Birthday='09/25/1970', @Interests='Music', @Street1='8 W Cerritos Ave #54',  @Street2 =NULL, @City='Bridgeport', @State='NJ', @Zip='8014' 
+GO
+EXEC CreateUser  @FirstName='Lenna', @LastName='Paprocki', @Birthday='12/29/1977', @Interests=NULL, @Street1='639 Main St',  @Street2 ='Apt 3', @City='Anchorage', @State='AK', @Zip='99501' 
+GO
+EXEC CreateUser  @FirstName='Donette', @LastName='Foller', @Birthday='04/11/1980', @Interests='Travelling, Fishing, Hunting', @Street1='34 Center St',  @Street2 =NULL, @City='Hamilton', @State='OH', @Zip='45011' 
+GO
+EXEC CreateUser  @FirstName='Simona', @LastName='Morasca', @Birthday='04/05/1981', @Interests='Painting', @Street1='3 Mcauley Dr',  @Street2 =NULL, @City='Ashland', @State='OH', @Zip='44805' 
+GO
+EXEC CreateUser  @FirstName='Mitsue', @LastName='Tollner', @Birthday='07/12/1981', @Interests=NULL, @Street1='7 Eads St',  @Street2 ='Apt 33k', @City='Chicago', @State='IL', @Zip='60632' 
+GO
+EXEC CreateUser  @FirstName='Leota', @LastName='Dilliard', @Birthday='09/04/1981', @Interests='Dancing, Reading, Writing', @Street1='7 W Jackson Blvd',  @Street2 =NULL, @City='San Jose', @State='CA', @Zip='95111' 
+GO
+EXEC CreateUser  @FirstName='Sage', @LastName='Wieser', @Birthday='07/09/1983', @Interests='Golf, Hiking', @Street1='5 Boston Ave #88',  @Street2 =NULL, @City='Sioux Falls', @State='SD', @Zip='57105' 
+GO
+EXEC CreateUser  @FirstName='Kris', @LastName='Marrier', @Birthday='11/08/1983', @Interests=NULL, @Street1='228 Runamuck Pl #2808',  @Street2 =NULL, @City='Baltimore', @State='MD', @Zip='21224' 
+GO
+EXEC CreateUser  @FirstName='Minna', @LastName='Amigon', @Birthday='07/08/1987', @Interests=NULL, @Street1='2371 Jerrold Ave',  @Street2 ='Apt 1a', @City='Kulpsville', @State='PA', @Zip='19443' 
+GO
+EXEC CreateUser  @FirstName='Abel', @LastName='Maclead', @Birthday='02/13/1991', @Interests=NULL, @Street1='37275 St  Rt 17m M',  @Street2 =NULL, @City='Middle Island', @State='NY', @Zip='11953' 
+GO
+EXEC CreateUser  @FirstName='Kiley', @LastName='Caldarera', @Birthday='03/12/1992', @Interests='Field Hockey, Softball, Swimming', @Street1='25 E 75th St #69',  @Street2 =NULL, @City='Los Angeles', @State='CA', @Zip='90034' 
+GO
+EXEC CreateUser  @FirstName='Graciela', @LastName='Ruta', @Birthday='02/12/1995', @Interests=NULL, @Street1='98 Connecticut Ave Nw',  @Street2 =NULL, @City='Chagrin Falls', @State='OH', @Zip='44023' 
+GO
+

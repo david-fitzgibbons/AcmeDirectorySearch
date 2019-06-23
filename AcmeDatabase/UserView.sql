@@ -13,5 +13,5 @@
 		addr.Zip        as "Zip"
 
     from [dbo].[User] usr
-        inner join [dbo].[Address] addr on usr.[Address] = addr.Id
+        inner join [dbo].[Address] addr on usr.[AddressId] = addr.Id
         inner join [dbo].[State] st on addr.[State] = st.Id
