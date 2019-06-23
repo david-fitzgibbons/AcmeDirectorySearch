@@ -19,7 +19,7 @@
         // Search
         Task<User> GetSingle(int id);
 
-        Task<UserImageDTO> GetUserImageAsync(int id);
+        Task<UserImageDTO> GetUserImage(int id);
 
         Task<IEnumerable<User>> QueryByName(IEnumerable<string> filters);
     }

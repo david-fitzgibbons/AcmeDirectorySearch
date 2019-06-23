@@ -47,7 +47,7 @@
         /// <returns></returns>
         public async Task<User> CreateUser(User user, UserImageDTO image)
         {
-            const string sp = "Create_User";
+            const string sp = "CreateUser";
 
             DynamicParameters param = new DynamicParameters();
             param.Add("@FirstName", user.FirstName);
@@ -83,7 +83,7 @@
             using (IDbConnection db = this.DatabaseConnection)
             {
                 IEnumerable<User> result = await db.QueryAsync<User, Address, User>(
-                        this.UserViewSql + " Where usr.id = @userId",
+                        this.UserViewSql + " Where UserId = @userId",
                         map: (usr, addr) => this.QueryResultMapper(usr, addr),
                         splitOn: "AddressId",
                         param: new { @userId = id });
@@ -98,7 +98,7 @@
         /// </summary>
         /// <param name="id">Id of the User for whom to retrieve the image</param>
         /// <returns>Image</returns>
-        public async Task<UserImageDTO> GetUserImageAsync(int id)
+        public async Task<UserImageDTO> GetUserImage(int id)
         {
             const string sp = "GetUserImage";
 
@@ -122,8 +122,8 @@
         public async Task<IEnumerable<User>> QueryByName(IEnumerable<string> filters)
         {
             string whereClause = @" Where
-                    usr.firstname LIKE @filter
-                    OR usr.lastname LIKE @filter
+                    FirstName LIKE @filter
+                    OR LastName LIKE @filter
                 ";
 
             using (IDbConnection db = this.DatabaseConnection)

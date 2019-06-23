@@ -8,14 +8,14 @@
 
     public class DatabaseFixture
     {
+        public string DatabaseConnectionString { get; }
 
-        private readonly string connectionString;
 
         public SqlConnection Db
         {
             get
             {
-                return new SqlConnection(connectionString);
+                return new SqlConnection(DatabaseConnectionString);
             }
         }
 
@@ -26,7 +26,7 @@
                     .AddJsonFile("appsettings.test.json")
                     .Build();
 
-            this.connectionString = config.GetSection("Database")["ConnectionString"];
+            this.DatabaseConnectionString = config.GetSection("Database")["ConnectionString"];
         }
 
     }
