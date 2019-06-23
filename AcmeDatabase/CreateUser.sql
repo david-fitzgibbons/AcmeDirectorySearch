@@ -25,7 +25,7 @@ AS
 	--Capture id reference to created Address
 	SET @AddressId = SCOPE_IDENTITY();
 
-	INSERT INTO [dbo].[User](FirstName, LastName, Birthday, Interests, Address)
+	INSERT INTO [dbo].[User](FirstName, LastName, Birthday, Interests, AddressId)
 	VALUES (@FirstName, @LastName, @Birthday, @Interests, @AddressId)
 
 	--Capture id reference to created User

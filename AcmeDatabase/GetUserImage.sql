@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[GetUserImage]
-	@UserId int = 0
+	@UserId int
 AS
 
 	If Exists (SELECT Id FROM UserImage WHERE UserId = @UserId)

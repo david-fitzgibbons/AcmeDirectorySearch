@@ -5,9 +5,9 @@
     [LastName] NVARCHAR(50) NOT NULL, 
     [Birthday] DATE NOT NULL, 
     [Interests] NVARCHAR(250) NULL, 
-    [Address] INT NOT NULL
+    [AddressId] INT NOT NULL
 
 	CONSTRAINT fk_user_address
-		FOREIGN KEY ([Address])
+		FOREIGN KEY ([AddressId])
 		REFERENCES [dbo].[Address] ([Id])
 )
