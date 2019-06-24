@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AcmeUX",
+    "\\AcmeUX\\src"
   ],
+  "SelectedNode": "\\AcmeUX\\src\\app",
   "PreviewInSolutionExplorer": false
 }

@@ -12,7 +12,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c08aeb25-4257-40b9-8328-71fdf6c608d7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>server.ts</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <StartWebBrowser>True</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -35,9 +36,16 @@
     <Content Include=".gitignore" />
     <Content Include="angular.json" />
     <Content Include="browserslist" />
+    <Content Include="e2e\protractor.conf.js" />
+    <Content Include="e2e\tsconfig.json" />
+    <Content Include="src\app\app.component.css" />
+    <Content Include="src\app\app.component.html" />
+    <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\index.html" />
+    <Content Include="src\styles.css" />
     <Content Include="tsconfig.spec.json" />
     <Content Include="tslint.json" />
-    <None Include="server.ts" />
     <Content Include="karma.conf.js" />
     <Content Include="package-lock.json" />
     <Content Include="tsconfig.app.json" />
@@ -47,7 +55,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="e2e\" />
+    <Folder Include="e2e\src\" />
     <Folder Include="src\" />
+    <Folder Include="src\app\" />
+    <Folder Include="src\assets\" />
+    <Folder Include="src\environments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="e2e\src\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="e2e\src\app.po.ts" />
+    <TypeScriptCompile Include="src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
