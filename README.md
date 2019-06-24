@@ -20,7 +20,7 @@ Technologies used within the solution include
     - https://github.com/david-fitzgibbons/AcmeDirectorySearch.git
 - Build the Solution 
 - Run the solution using Docker Compose as the startup project
-    - **_ Note: The database binds to the host on port 1433_**
+    - **_Note: The database binds to the host on port 1433_**
     - This step builds the containers and binds Docker-Compse as the owner of those containers
 - Stop the project
 - On the AcmeDatabase project
