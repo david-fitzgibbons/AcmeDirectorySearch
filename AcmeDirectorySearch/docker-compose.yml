@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  acmedirectorysearch:
+    image: ${DOCKER_REGISTRY-}acmedirectorysearch
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+  db:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    environment:
+        SA_PASSWORD: "T3mp0rary!"
+        ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
