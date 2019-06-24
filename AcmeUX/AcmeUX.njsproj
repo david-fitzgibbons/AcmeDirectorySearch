@@ -58,6 +58,7 @@
     <Folder Include="e2e\src\" />
     <Folder Include="src\" />
     <Folder Include="src\app\" />
+    <Folder Include="src\app\services\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\environments\" />
   </ItemGroup>
@@ -68,6 +69,10 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\services\httpbase.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\httpbase.service.ts" />
+    <TypeScriptCompile Include="src\app\services\property.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\property.service.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
