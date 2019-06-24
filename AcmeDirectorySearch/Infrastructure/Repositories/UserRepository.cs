@@ -1,16 +1,16 @@
 ﻿namespace AcmeDirectorySearch.Infrastructure.Repositories
 {
+    using AcmeDirectorySearch.Core.DTO;
+    using AcmeDirectorySearch.Core.Models;
+    using AcmeDirectorySearch.Infrastructure.Interfaces;
+    using Dapper;
+    using Microsoft.Extensions.Options;
     using System;
     using System.Collections.Generic;
     using System.Data;
     using System.Linq;
     using System.Reflection;
     using System.Threading.Tasks;
-    using AcmeDirectorySearch.Core.DTO;
-    using AcmeDirectorySearch.Infrastructure.Interfaces;
-    using AcmeDirectorySearch.Core.Models;
-    using Dapper;
-    using Microsoft.Extensions.Options;
 
     /// <summary>
     /// Handles retrieving and persisting User data to the Database

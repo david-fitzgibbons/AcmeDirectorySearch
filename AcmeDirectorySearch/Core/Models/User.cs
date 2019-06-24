@@ -1,8 +1,8 @@
 ﻿namespace AcmeDirectorySearch.Core.Models
 {
+    using AcmeDirectorySearch.Core.Validations;
     using System;
     using System.ComponentModel.DataAnnotations;
-    using AcmeDirectorySearch.Core.Validations;
 
     /// <summary>
     /// Object for handling the modeling of a User entity 

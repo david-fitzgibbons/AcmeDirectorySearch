@@ -1,11 +1,8 @@
 ﻿using AcmeDirectorySearch.Infrastructure.Repositories;
 using AcmeTests.Integration.Fixtures;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
 using System.Linq;
+using Xunit;
 
 namespace AcmeTests.Integration.Infrastructure
 {
@@ -35,6 +32,6 @@ namespace AcmeTests.Integration.Infrastructure
         }
 
 
-         
+
     }
 }

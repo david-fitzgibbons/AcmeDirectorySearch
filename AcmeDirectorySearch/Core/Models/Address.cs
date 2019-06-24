@@ -1,7 +1,7 @@
 ﻿namespace AcmeDirectorySearch.Core.Models
 {
-    using System.ComponentModel.DataAnnotations;
     using AcmeDirectorySearch.Core.Validations;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Address object that reprsents a User object.  This model contains all of the

@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["AcmeDirectorySearch.csproj", "./"]
+COPY ["AcmeDirectorySearch.csproj", ""]
 RUN dotnet restore "AcmeDirectorySearch.csproj"
 COPY . .
 WORKDIR "/src/"

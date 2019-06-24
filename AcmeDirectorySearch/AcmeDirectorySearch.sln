@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeTests", "..\AcmeTests\A
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AcmeDatabase", "..\AcmeDatabase\AcmeDatabase.sqlproj", "{103A4ACC-8081-4CDC-B424-473A3D43DDBC}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{98FB4044-A544-42A3-AAD3-B59AA4D92EE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{103A4ACC-8081-4CDC-B424-473A3D43DDBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{103A4ACC-8081-4CDC-B424-473A3D43DDBC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{103A4ACC-8081-4CDC-B424-473A3D43DDBC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{98FB4044-A544-42A3-AAD3-B59AA4D92EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FB4044-A544-42A3-AAD3-B59AA4D92EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FB4044-A544-42A3-AAD3-B59AA4D92EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FB4044-A544-42A3-AAD3-B59AA4D92EE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

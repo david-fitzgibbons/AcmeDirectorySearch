@@ -1,12 +1,12 @@
 ﻿namespace AcmeDirectorySearch.Core.Services
 {
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
     using AcmeDirectorySearch.Core.DTO;
     using AcmeDirectorySearch.Core.Interfaces;
     using AcmeDirectorySearch.Core.Models;
     using AcmeDirectorySearch.Infrastructure.Interfaces;
     using AutoMapper;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Implementation of the IUserService interface providing

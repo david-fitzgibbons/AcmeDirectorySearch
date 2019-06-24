@@ -1,9 +1,9 @@
 ﻿namespace AcmeDirectorySearch.Core.Services
 {
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
     using AcmeDirectorySearch.Core.Interfaces;
     using AcmeDirectorySearch.Infrastructure.Interfaces;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Implementation of the IPropertyService interface providing

@@ -2,10 +2,10 @@
 {
 
     using AcmeTests.Integration.Fixtures;
-    using System.Collections.Generic;
-    using Xunit;
     using Dapper;
+    using System.Collections.Generic;
     using System.Data;
+    using Xunit;
 
 
     [Collection("Database")]

@@ -1,6 +1,5 @@
 ﻿namespace AcmeDirectorySearch.Infrastructure.Interfaces
 {
-    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 

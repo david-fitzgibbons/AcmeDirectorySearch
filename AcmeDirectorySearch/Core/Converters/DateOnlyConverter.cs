@@ -1,8 +1,8 @@
 ﻿namespace AcmeDirectorySearch.Core.Converters
 {
+    using Newtonsoft.Json;
     using System;
     using System.Globalization;
-    using Newtonsoft.Json;
 
     /// <summary>
     /// Custom Converter for JSON.Net which limits the 
