@@ -36,6 +36,31 @@ Technologies used within the solution include
 - Run the Docker Compose project again to test the API endpoints
     - example https://localhost:[port]/api/v1/property/states
 
+## Endpoint Examples
+- GET: /api/v1/property/states  :  Returns a list of states
+- GET: /api/v1/user/1           :  Returns a specific user by Id
+- GET: /api/v1/user/1/image     :  Returns the User's image or a default one
+
+##### Searching
+- GET: /api/v1/user?filter=ma     :  Returns any User with a First or Last name containing 'ma'
+- GET: /api/v1/user?filter=abel&filter=kris     :  Returns any User with a First or Last name of either 'abel' or 'kris'
+
+##### Creating a User
+- POST: /api/v1/user            :  Returns the User that was created
+Sample Payload
+'''
+{
+	"firstname" : "Katie",
+	"lastname" : "Hoek",
+	"birthday" : "01/10/1980",
+	"address" : {
+		"street1" : "123 Main St",
+		"city" : "Saratoga Springs",
+		"state" : "NY",
+		"zip" : "12866"
+	}
+}
+'''
 
 ## Architecture
 
