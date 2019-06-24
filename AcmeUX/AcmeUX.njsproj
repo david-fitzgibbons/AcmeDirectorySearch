@@ -40,6 +40,11 @@
     <Content Include="e2e\tsconfig.json" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\global-error.service.ts">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\sections\notifications\notification.component.css" />
+    <Content Include="src\app\sections\notifications\notification.component.html" />
     <Content Include="src\assets\.gitkeep" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
@@ -58,6 +63,13 @@
     <Folder Include="e2e\src\" />
     <Folder Include="src\" />
     <Folder Include="src\app\" />
+    <Folder Include="src\app\models\" />
+    <Folder Include="src\app\interfaces\" />
+    <Folder Include="src\app\dto\" />
+    <Folder Include="src\app\sections\" />
+    <Folder Include="src\app\sections\directory\" />
+    <Folder Include="src\app\sections\menu\" />
+    <Folder Include="src\app\sections\notifications\" />
     <Folder Include="src\app\services\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\environments\" />
@@ -69,10 +81,26 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\services\httpbase.service.spec.ts" />
-    <TypeScriptCompile Include="src\app\services\httpbase.service.ts" />
+    <TypeScriptCompile Include="src\app\dto\createuser.dto.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\models\address.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\models\app.error.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\models\user.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\sections\notifications\notification.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\sections\notifications\notification.component.ts" />
+    <TypeScriptCompile Include="src\app\services\error.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\error.service.ts" />
     <TypeScriptCompile Include="src\app\services\property.service.spec.ts" />
     <TypeScriptCompile Include="src\app\services\property.service.ts" />
+    <TypeScriptCompile Include="src\app\services\user.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\user.service.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
