@@ -47,8 +47,9 @@ Technologies used within the solution include
 
 ##### Creating a User
 - POST: /api/v1/user            :  Returns the User that was created
+
 Sample Payload
-'''
+```
 {
 	"firstname" : "Katie",
 	"lastname" : "Hoek",
@@ -60,7 +61,7 @@ Sample Payload
 		"zip" : "12866"
 	}
 }
-'''
+```
 
 ## Architecture
 
