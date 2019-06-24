@@ -69,7 +69,7 @@ namespace AcmeTests
         }
 
 
-        public static User User(int id = 1, string FirstName = "__TESTFirst")
+        public static User User(int id = 1, string FirstName = "__TESTFirst", string City = "__TESTCity")
         {
             var user = new User()
             {
@@ -78,20 +78,20 @@ namespace AcmeTests
                 LastName = "__TESTLast",
                 Birthday = DateTime.Now,
                 Interests = "__TESTInterests",
-                Address = Address()
+                Address = Address(City)
             };
 
             return user;
         }
 
 
-        public static Address Address()
+        public static Address Address(string City = "__TESTCity")
         {
             return new Address()
             {
                 Street1 = "__TESTStreet1",
                 Street2 = "__TESTStreet2",
-                City = "__TESTCity",
+                City = City,
                 State = "AK",
                 Zip = "90210"
             };
