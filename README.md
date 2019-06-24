@@ -12,7 +12,7 @@ Technologies used within the solution include
 - Automapper
 - Xunit & Moq
 - MS SQL Server
-- Docker & Docker-Compse
+- Docker & Docker-Compose
 
 
 ## Quick Start
@@ -35,7 +35,6 @@ Technologies used within the solution include
 - Run the AcmeTest test suite
 
 - Run the Docker Compose project again to test the API endpoints
-    - example https://localhost:[port]/api/v1/property/states
 
 ## Endpoint Examples
 - GET: /api/v1/property/states  :  Returns a list of states
