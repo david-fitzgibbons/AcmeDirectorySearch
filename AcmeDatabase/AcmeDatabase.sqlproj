@@ -57,25 +57,29 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="Views" />
+    <Folder Include="PostScripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Property.sql" />
-    <Build Include="Address.sql" />
-    <Build Include="State.sql" />
-    <Build Include="User.sql" />
-    <Build Include="UserImage.sql" />
-    <Build Include="UserView.sql" />
-    <Build Include="GetUserImage.sql" />
-    <Build Include="CreateUser.sql" />
-    <Build Include="DeleteUser.sql" />
+    <PostDeploy Include="PostScripts\SeedData.sql" />
+    <Build Include="Tables\State.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Property.sql" />
+    <Build Include="Views\UserView.sql" />
+    <Build Include="StoredProcedures\CreateUser.sql" />
+    <Build Include="StoredProcedures\GetUserImage.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AcmeDatabase.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Post-SeedData.sql" />
+    <None Include="AcmeDatabase.publish.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AcmeDatabase.publish.xml" />
+    <Build Include="Tables\Address.sql" />
+    <Build Include="Tables\UserImage.sql" />
+    <Build Include="StoredProcedures\DeleteUser.sql" />
   </ItemGroup>
 </Project>
