@@ -1,9 +1,9 @@
 ﻿namespace AcmeDirectorySearch.Infrastructure.Interfaces
 {
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
     using AcmeDirectorySearch.Core.DTO;
     using AcmeDirectorySearch.Core.Models;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Interface for the UserRepository following the 

@@ -1,8 +1,8 @@
 ﻿namespace AcmeDirectorySearch.Controllers.v1.Contracts
 {
-    using System;
     using AcmeDirectorySearch.Core.Converters;
     using Newtonsoft.Json;
+    using System;
 
     /// <summary>
     /// Contract defining the JSON output of the User object for version 1 of the API

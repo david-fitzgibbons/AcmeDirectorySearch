@@ -2,8 +2,8 @@
 {
     using AcmeDirectorySearch.Controllers.v1.Contracts;
     using System.Collections.Generic;
-    using Xunit;
     using System.Linq;
+    using Xunit;
 
     public class AddressResponseTest
     {

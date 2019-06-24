@@ -1,11 +1,11 @@
 ﻿namespace AcmeDirectorySearch.Infrastructure.Repositories
 {
-    using System.Collections.Generic;
-    using System.Data;
-    using System.Threading.Tasks;
     using AcmeDirectorySearch.Infrastructure.Interfaces;
     using Dapper;
     using Microsoft.Extensions.Options;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Persistence layer for handling retrieval of Property values form the DB

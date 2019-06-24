@@ -1,13 +1,13 @@
 ﻿namespace AcmeDirectorySearch.Core
 {
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Net;
-    using System.Threading.Tasks;
     using Microsoft.AspNetCore.Diagnostics;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Global error handling that catches errors and returns an error object

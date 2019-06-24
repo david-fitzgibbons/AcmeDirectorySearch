@@ -1,10 +1,8 @@
 ﻿namespace AcmeTests.API.v1
 {
     using AcmeDirectorySearch.Controllers.v1.Contracts;
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using Xunit;
 
 

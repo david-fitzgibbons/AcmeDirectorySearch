@@ -1,8 +1,8 @@
 ﻿namespace AcmeDirectorySearch.Infrastructure
 {
+    using Microsoft.Extensions.Options;
     using System.Data;
     using System.Data.SqlClient;
-    using Microsoft.Extensions.Options;
 
     /// <summary>
     /// Base Repository class which retreives the Database 

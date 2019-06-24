@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using AcmeDirectorySearch.Core.DTO;
 
     /// <summary>
     /// Interface for the PropertyService layer for transferring

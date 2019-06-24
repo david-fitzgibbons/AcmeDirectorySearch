@@ -1,10 +1,10 @@
 ﻿namespace AcmeDirectorySearch.Controllers.v1
 {
+    using AcmeDirectorySearch.Core.Interfaces;
+    using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using AcmeDirectorySearch.Core.Interfaces;
-    using Microsoft.AspNetCore.Mvc;
 
     [Route("api/v1/[controller]")]
     [ApiController]

@@ -1,15 +1,15 @@
 ﻿namespace AcmeTests.Integration
 {
-    using AcmeTests.Integration.Fixtures;
-    using System.Collections.Generic;
-    using Xunit;
-    using Dapper;
-    using System.Data;
-    using AcmeDirectorySearch.Infrastructure.Repositories;
-    using Microsoft.Extensions.Options;
-    using AcmeDirectorySearch.Core.Models;
     using AcmeDirectorySearch.Core.DTO;
+    using AcmeDirectorySearch.Core.Models;
+    using AcmeDirectorySearch.Infrastructure.Repositories;
+    using AcmeTests.Integration.Fixtures;
+    using Dapper;
+    using Microsoft.Extensions.Options;
+    using System.Collections.Generic;
+    using System.Data;
     using System.Linq;
+    using Xunit;
 
     [Collection("Database")]
     public class UserRepositoryTest
@@ -34,7 +34,7 @@
         public async void Validate_User_Create_AND_Retrieve_Single_User()
         {
             var repo = getRepo();
-            
+
             // Test creating the User
             User resp = await repo.CreateUser(HelperData.User(), HelperData.userImageDTOWithoutData());
             Assert.True(resp.Id > 0);

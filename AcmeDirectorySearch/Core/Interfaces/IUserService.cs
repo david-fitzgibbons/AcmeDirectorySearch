@@ -1,8 +1,8 @@
 ﻿namespace AcmeDirectorySearch.Core.Interfaces
 {
+    using AcmeDirectorySearch.Core.DTO;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using AcmeDirectorySearch.Core.DTO;
 
     /// <summary>
     /// Interface for the UserService layer for transferring

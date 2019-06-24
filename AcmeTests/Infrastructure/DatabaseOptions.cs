@@ -1,9 +1,9 @@
 ﻿namespace AcmeTests.Integration
 {
-    using Xunit;
-    using System.IO;
     using AcmeTests.Integration.Fixtures;
     using Microsoft.Extensions.Configuration;
+    using System.IO;
+    using Xunit;
 
 
     [Collection("Database")]
