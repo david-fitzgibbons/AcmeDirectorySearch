@@ -21,7 +21,7 @@ Technologies used within the solution include
 - Build the Solution 
 - Run the solution using Docker Compose as the startup project
     - **_Note: The database binds to the host on port 1433_**
-    - This step builds the containers and binds Docker-Compse as the owner of those containers
+    - This step builds the containers and binds Docker-Compse to those container instances
 - Stop the project
 - On the AcmeDatabase project
     - Right click and 'Publish...'
