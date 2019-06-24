@@ -19,7 +19,7 @@ Technologies used within the solution include
 - Open Visual Studio and Choose Clone or Checkout Code
     - https://github.com/david-fitzgibbons/AcmeDirectorySearch.git
 - Build the Solution 
-- Run the Docker Compose project as the startup project
+- Run the solution using Docker Compose as the startup project
     - This step builds the containers and binds Docker-Compse as the owner of those containers
 - Stop the project
 - On the AcmeDatabase project
@@ -49,13 +49,13 @@ The core of the application deals with managing User / Address data as it flows 
 
 Overview of data flow:  Contracts <> DTO <> Service & Models <> Repository
 
-###### API / Controllers
+#### API / Controllers
 The controllers follow REST API standards and are versioned starting with v1.  Along with the versioning of the controllers, the input / output objects the user interacts with are also bound to the version of the controller.  This allows for Unit Tests that monitor the state of the objects to confirm consistency during versioning changes within the system
 
-###### DTO / Models
+#### DTO / Models
 The DTO's are purposefully light and should only behave as a data transfer medium without performing any logic.  The models are meant to store all of the business validation and logic for the system.  
 
-###### Services / Repositories
+#### Services / Repositories
 The services and repositories in the system follow the repository pattern where the instance of the object is provided at runtime creating loose coupling between the layers with IoC
 
 
