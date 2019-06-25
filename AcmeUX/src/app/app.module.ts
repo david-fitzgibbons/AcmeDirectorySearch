@@ -10,6 +10,7 @@ import { NotificationComponent } from './sections/notifications/notification.com
 import { MenuComponent } from './sections/menu/menu.component';
 import { AboutComponent } from './sections/about/about.component';
 import { RouterModule } from '@angular/router';
+import { DirectoryModule } from './sections/directory/directory.module';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,10 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    DirectoryModule,
     RouterModule.forRoot([
       { path: 'about', component: AboutComponent },
-      { path: '*', redirectTo: '/directory' },
+      { path: '**', redirectTo: '/directory' },
     ])
   ],
   providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],

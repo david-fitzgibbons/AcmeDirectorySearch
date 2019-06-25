@@ -44,6 +44,10 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\app\sections\about\about.component.html" />
+    <Content Include="src\app\sections\directory\directory-routing.module.ts">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\sections\directory\directory.component.html" />
     <Content Include="src\app\sections\menu\menu.component.css" />
     <Content Include="src\app\sections\menu\menu.component.html" />
     <Content Include="src\app\sections\notifications\notification-container.component.css" />
@@ -74,6 +78,7 @@
     <Folder Include="src\app\interfaces\" />
     <Folder Include="src\app\sections\" />
     <Folder Include="src\app\sections\about\" />
+    <Folder Include="src\app\sections\directory\" />
     <Folder Include="src\app\sections\menu\" />
     <Folder Include="src\app\sections\notifications\" />
     <Folder Include="src\app\services\" />
@@ -106,6 +111,8 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\sections\about\about.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\directory.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\directory.module.ts" />
     <TypeScriptCompile Include="src\app\sections\menu\menu.component.ts" />
     <TypeScriptCompile Include="src\app\sections\notifications\notification-container.component.spec.ts" />
     <TypeScriptCompile Include="src\app\sections\notifications\notification-container.component.ts" />
