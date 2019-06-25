@@ -44,7 +44,7 @@ Technologies used within the solution include
     - _if you want to ignore localhost certificate errors in Chrome_
     	- go to chrome://flags/#allow-insecure-localhost and 'Allow Invalid certificates for resources loaded from localhost'
 	
-- Navigate to https://localhost:4200  _note : using **https**_
+- Navigate to https://localhost:4200   --- _note : using **https**_
 - Type 'simona kiley kris' in to the search bar to see results
     
 
