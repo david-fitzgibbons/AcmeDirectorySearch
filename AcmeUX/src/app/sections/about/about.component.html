@@ -1,1 +1,76 @@
 <h4>About Acme Directory Search</h4>
+  <p>
+    A C#/Angular web application attempting to accomplish the following activies
+  </p>
+  <ul>
+    <li>User Directory Search based on First or Last name</li>
+    <li>Records will contain Name, Address, Age, Interests and a Picture</li>
+    <li>Ability to Create new Users</li>
+  </ul>
+
+  <p>
+    Technologies used within the solution include
+  </p>
+  <ul>
+    <li>Angular</li>
+    <li>.Net Core (C#)</li>
+    <li>Dapper</li>
+    <li>Automapper</li>
+    <li>Xunit & Moq</li>
+    <li>MS SQL Server</li>
+    <li>Docker & Docker-Compose</li>
+  </ul>
+
+
+<h5>Architecture</h5>
+<hr />
+  <p>
+    Mid-tier project is broken down in to three primary areas
+  </p>
+  <ul>
+    <li>API / Controllers</li>
+    <li>Service / Models</li>
+    <li>Repositories</li>
+    <li>General</li>
+  </ul>
+
+<p>
+  The core of the application deals with managing User / Address data as it flows from the API endpoints to the Repositories. Utilizing Dependency Injection for the Service and Repository layers allows for separation of concerns within the application. DTO objects are used for the transfer of information between the API and Service layers. Also, Contract objects exist to ensure backwards compatability during API changes.
+</p>
+<p>Overview of data flow: Contracts <> DTO <> Service & Models <> Repository</p>
+
+<h5>API / Controllers</h5>
+<hr/>
+<p>
+  The controllers follow REST API standards and are versioned starting with v1. Along with the versioning of the controllers, the input / output objects the user interacts with are also bound to the version of the controller. This allows for Unit Tests that monitor the state of the objects to confirm consistency during versioning changes within the system
+</p>
+<p style="font-weight:bold;">DTO / Models</p>
+<p>
+  The DTO's are purposefully light and should only behave as a data transfer medium without performing any logic. The models are meant to store all of the business validation and logic for the system.
+</p>
+<p style="font-weight:bold;">Services / Repositories</p>
+<p>
+  The services and repositories in the system follow the repository pattern where the instance of the object is provided at runtime creating loose coupling between the layers with IoC
+</p>
+<p style="font-weight:bold;">Database</p>
+<p>
+  Database design for the system is straight forward and simplified. Consisting of only 5 tables:
+</p>
+  <ul>
+    <li>Address</li>
+    <li>Property</li>
+    <li>State</li>
+    <li>User</li>
+    <li>UserImage</li>
+  </ul>
+
+
+<p>
+  The User & Address tables are the bulk of the data storage for the system. Address utilizes States as a form of extracting repetitive data in accordance with Database Normalization
+</p>
+<p>
+  The UserImage table will only contain records for User's who provided an image during their creation. If no image was provided, then a default image will be returned for the user
+</p>
+<p>
+  Property table contains properties to be utilized by the system. In this instance, there is currently only one property which is the default image for a user who has not provided an image during creation
+</p>
