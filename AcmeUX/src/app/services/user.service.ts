@@ -58,7 +58,7 @@ export class UserService {
         return this.userSerializer(resp);
       }))
       .pipe(map(resp => {
-        this.emitMessage('User Created', `Successfully created new user { ${resp.id} : ${resp.firstName} ${resp.lastName}`);
+        this.emitMessage('User Created', `Successfully created new user { ${resp.id} : ${resp.firstName} ${resp.lastName} }`);
         return resp;
       }));
   }

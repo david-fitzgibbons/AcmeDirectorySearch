@@ -44,10 +44,16 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\app\sections\about\about.component.html" />
+    <Content Include="src\app\sections\directory\create\create.component.css" />
+    <Content Include="src\app\sections\directory\create\create.component.html" />
     <Content Include="src\app\sections\directory\directory-routing.module.ts">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\app\sections\directory\directory.component.html" />
+    <Content Include="src\app\sections\directory\howto\howto.component.css" />
+    <Content Include="src\app\sections\directory\howto\howto.component.html" />
+    <Content Include="src\app\sections\directory\search\search.component.css" />
+    <Content Include="src\app\sections\directory\search\search.component.html" />
     <Content Include="src\app\sections\menu\menu.component.css" />
     <Content Include="src\app\sections\menu\menu.component.html" />
     <Content Include="src\app\sections\notifications\notification-container.component.css" />
@@ -79,6 +85,9 @@
     <Folder Include="src\app\sections\" />
     <Folder Include="src\app\sections\about\" />
     <Folder Include="src\app\sections\directory\" />
+    <Folder Include="src\app\sections\directory\create\" />
+    <Folder Include="src\app\sections\directory\howto\" />
+    <Folder Include="src\app\sections\directory\search\" />
     <Folder Include="src\app\sections\menu\" />
     <Folder Include="src\app\sections\notifications\" />
     <Folder Include="src\app\services\" />
@@ -111,8 +120,14 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\sections\about\about.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\create\create.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\create\create.component.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\directory.component.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\directory.module.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\howto\howto.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\howto\howto.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\search\search.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\search\search.component.ts" />
     <TypeScriptCompile Include="src\app\sections\menu\menu.component.ts" />
     <TypeScriptCompile Include="src\app\sections\notifications\notification-container.component.spec.ts" />
     <TypeScriptCompile Include="src\app\sections\notifications\notification-container.component.ts" />

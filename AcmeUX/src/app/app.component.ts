@@ -24,7 +24,7 @@ export class AppComponent {
     this.userService.getUsers(['j', 'k']).subscribe((o) => console.log(o));
 
     let user = new CreateUserDTO('katie', 'hoek', new Date(), undefined, '123 main',
-      undefined, 'here', 'ny', '11111');
+      undefined, 'herdddde', 'ny', '11111');
     this.userService.createUser(user).subscribe(o => console.log('created user!: ', o));
   }
 
