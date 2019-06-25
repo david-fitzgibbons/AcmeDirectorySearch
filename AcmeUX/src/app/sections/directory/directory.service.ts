@@ -9,6 +9,7 @@ import { IUser } from '../../models/user';
 import { ErrorService } from '../../services/error.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { SearchState } from './search.state';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -24,10 +25,6 @@ export class DirectoryService {
   private lastSearch: string = '';
   public searchEvents: Subject<SearchState> = new Subject();
 
-  changeSearchState(newState: boolean) {
-    const state: SearchState = new SearchState(newState);
-    this.searchEvents.next(state);
-  }
 
 
   get states():Observable<string[]> { return this.propertyService.getStates(); }
@@ -41,7 +38,7 @@ export class DirectoryService {
     return this.userService.createUser(dto);
   }
 
-  private searchUsers(search: string, useLastSearch: boolean = false): Observable<IUser[]> {
+  searchUsers(search: string, useLastSearch: boolean = false): Observable<IUser[]> {
 
     if (useLastSearch) {
       search = this.lastSearch;
@@ -54,8 +51,15 @@ export class DirectoryService {
       filters = search.split(' ')
     }
 
-    return this.userService.getUsers(filters);
+    return this.userService.getUsers(filters)
+      .pipe(map(data => this.emitSearchState(false, data)));
   }
+
+  emitSearchState(newState: boolean, results: IUser[]) {
+    const state: SearchState = new SearchState(newState, results);
+    this.searchEvents.next(state);
+  }
+
 
   emitMessage(title: string, message: string) {
     this.messageService.emitMessage(title, message);

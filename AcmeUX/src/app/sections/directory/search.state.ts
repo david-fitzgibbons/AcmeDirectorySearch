@@ -1,7 +1,12 @@
-export class SearchState {
-  isSearchOngoing: false
+import { IUser } from '../../models/user';
 
-  constructor(searchOngoing: boolean) {
+export class SearchState {
+
+  isSearchOngoing: boolean;
+  searchResults: IUser[] | undefined;
+
+  constructor(searchOngoing: boolean, results: IUser[]|undefined) {
     this.isSearchOngoing = searchOngoing;
+    this.searchResults = results;
   }
 }

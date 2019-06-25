@@ -27,8 +27,7 @@ export class SearchComponent  {
     if (!this.searchUpdatedObservable) {
       const ob = new Observable(observer => { this.searchUpdatedObservable = observer; })
         .pipe(debounceTime(2000), distinctUntilChanged())  // debounce input and only continue if text is unique
-        .pipe(switchMap((sourceValue) => this.directoryService.searchUsers(<string>sourceValue) ))
-        .subscribe(result => console.log('RESULT', result));
+        .pipe(switchMap((sourceValue) => this.directoryService.searchUsers(<string>sourceValue)));
     }
 
     this.searchUpdatedObservable.next(newSearchValue);

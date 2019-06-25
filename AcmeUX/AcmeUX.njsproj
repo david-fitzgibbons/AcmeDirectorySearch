@@ -46,6 +46,10 @@
     <Content Include="src\app\sections\about\about.component.html" />
     <Content Include="src\app\sections\directory\create\create.component.css" />
     <Content Include="src\app\sections\directory\create\create.component.html" />
+    <Content Include="src\app\sections\directory\datacard\datacard.component.css" />
+    <Content Include="src\app\sections\directory\datacard\datacard.component.html" />
+    <Content Include="src\app\sections\directory\datagrid\datagrid.component.css" />
+    <Content Include="src\app\sections\directory\datagrid\datagrid.component.html" />
     <Content Include="src\app\sections\directory\directory-routing.module.ts">
       <SubType>Code</SubType>
     </Content>
@@ -85,6 +89,8 @@
     <Folder Include="src\app\sections\about\" />
     <Folder Include="src\app\sections\directory\" />
     <Folder Include="src\app\sections\directory\create\" />
+    <Folder Include="src\app\sections\directory\datacard\" />
+    <Folder Include="src\app\sections\directory\datagrid\" />
     <Folder Include="src\app\sections\directory\howto\" />
     <Folder Include="src\app\sections\directory\search\" />
     <Folder Include="src\app\sections\menu\" />
@@ -115,6 +121,9 @@
     <TypeScriptCompile Include="src\app\models\app-message.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\models\pager.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\models\user.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -124,6 +133,10 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\sections\directory\create\create.component.spec.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\create\create.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\datacard\datacard.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\datacard\datacard.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\datagrid\datagrid.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\datagrid\datagrid.component.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\directory.component.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\directory.module.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\directory.service.ts">
@@ -147,6 +160,9 @@
     <TypeScriptCompile Include="src\app\services\error.service.ts" />
     <TypeScriptCompile Include="src\app\services\message.service.spec.ts" />
     <TypeScriptCompile Include="src\app\services\message.service.ts" />
+    <TypeScriptCompile Include="src\app\services\pager.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\services\property.service.spec.ts" />
     <TypeScriptCompile Include="src\app\services\property.service.ts" />
     <TypeScriptCompile Include="src\app\services\user.service.spec.ts" />
