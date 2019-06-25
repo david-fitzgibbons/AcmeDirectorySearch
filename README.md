@@ -18,10 +18,16 @@ Technologies used within the solution include
 ## Quick Start
 - Open Visual Studio and Choose Clone or Checkout Code
     - https://github.com/david-fitzgibbons/AcmeDirectorySearch.git
+- Open CLI in the AcmeUX project directory
+    - _Assumes NPM and Angular CLI are installed globally_
+- Run $ npm install
+    - command will take ~10 minutes to complete
+    - keep the CLI open, it will be used in a later step
 - Build the Solution 
-- Run the solution using Docker Compose as the startup project
+- Run the solution using **Docker-Compose** as the startup project
     - **_Note: The database binds to the host on port 1433_**
-    - This step builds the containers and binds Docker-Compse to those container instances
+    	- If a container is already listening bound on this port it can be stopped / removed with docker stop #containerid and docker rm #container id
+    - This step initializes the containers and binds Docker-Compse to those container instances
 - Stop the project
 - On the AcmeDatabase project
     - Right click and 'Publish...'
@@ -35,6 +41,13 @@ Technologies used within the solution include
 - Run the AcmeTest test suite
 
 - Run the Docker Compose project again to test the API endpoints
+- With the CLI open in the AcmeUX directory run $ ng serve --ssl
+    - _if you want to ignore localhost certificate errors in Chrome_
+    	- go to chrome://flags/#allow-insecure-localhost and 'Allow Invalid certificates for resources loaded from localhost'
+	
+- Navigate to https://localhost:4200
+- Type 'simona kiley kris' in to the search bar to see results
+    
 
 ## Endpoint Examples
 - GET: /api/v1/property/states  :  Returns a list of states
