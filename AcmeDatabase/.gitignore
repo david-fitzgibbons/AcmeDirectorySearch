@@ -2,6 +2,5 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/AcmeDatabase/AcmeDatabase.dbmdl
-/AcmeDatabase/AcmeDatabase.jfm
-.vs/
+bin/
+obj/

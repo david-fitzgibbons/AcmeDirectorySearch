@@ -10,6 +10,8 @@ AS
 
 			FROM
 				UserImage ui
+			WHERE 
+				UserId = @UserId
 		END
 	ELSE
 		BEGIN

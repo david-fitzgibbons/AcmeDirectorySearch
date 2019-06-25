@@ -1,0 +1,9 @@
+<img class="card-img-top" alt="..." src="{{imageUrl}}">
+<div class="card-body" style="position: relative">
+  <span class="userAge">Age: {{userData.getAge()}}</span>
+  <h5 class="card-title">{{userData.firstName}} {{userData.lastName}}</h5>
+  <p class="card-text">{{userData.address.street1}} <br /> {{userData.address.street2}} <br *ngIf="userData.length"/>{{userData.address.city}}, {{userData.address.state}} {{userData.address.zip}}</p>
+</div>
+<div class="card-footer">
+  <small class="text-muted">Interests: {{userData.interests}}<span *ngIf="!userData.interests" class="font-italic">No interests provided</span></small>
+</div>

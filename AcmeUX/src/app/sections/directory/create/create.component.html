@@ -1,0 +1,83 @@
+<button (click)="isDialogVisible = true" type="button" class="btn btn-success btn-lg mx-1">
+  <span class="px-1 font-weight-bold">+</span>
+</button>
+
+<div class="modal" tabindex="-1" role="dialog" [class.isWait]="isSaving"  [style.display]="isDialogVisible ? 'block' : 'none'">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content shadow-lg">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Add Person</h5>
+        <button type="button" class="close" (click)="isDialogVisible = false" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+
+      <div class="modal-body">
+        <form #createForm="ngForm">
+          <div class="form-row"><p class="font-italic">* Indicates Field is Required before Submitting</p></div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputFirstName">First Name*</label>
+              <input type="text" class="form-control" id="inputFirstName" name="FirstName" [(ngModel)]="newUser.FirstName" required placeholder="Jane">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputLastName">Last Name*</label>
+              <input type="text" class="form-control" id="inputLastName" name="LastName" [(ngModel)]="newUser.LastName" placeholder="Doe" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputBirthday">Birthday*</label>
+              <input type="date" class="form-control" id="inputBirthday" name="Birthday" [(ngModel)]="newUser.Birthday" placeholder="mm/dd/yyyy" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputPicture">Picture</label>
+              <input type="file" class="form-control-file" name="Image" id="inputPicture" (change)="onFileChange($event)" #imageField>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address*</label>
+            <input type="text" class="form-control" id="inputAddress" name="Street1" [(ngModel)]="newUser.Street1" placeholder="1234 Main St" required>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" name="Street2" [(ngModel)]="newUser.Street2" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City*</label>
+              <input type="text" class="form-control" id="inputCity" name="City" [(ngModel)]="newUser.City" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State*</label>
+              <select id="inputState" class="form-control" name="State" [(ngModel)]="newUser.State" required>
+                <option *ngFor="let state of states" [value]="state">{{state}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip*</label>
+              <input type="text" class="form-control" id="inputZip" [(ngModel)]="newUser.Zip" required name="Zip">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputInterests">Interests</label>
+            <textarea class="form-control" id="inputInterests" [(ngModel)]="newUser.Interests" name="Interests"></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <!--<button type="button" class="btn btn-danger mr-auto">Delete Person</button>-->
+            <button type="reset" class="btn btn-secondary" (click)="createForm.reset(); imageField.value=''; isDialogVisible = false; resetUserData()" data-dismiss="modal">Cancel</button>
+            <button type="submit" (click)="onSubmit(); imageField.value='';" [disabled]="!createForm.form.valid" class="btn btn-primary">Save Changes</button>
+          </div>
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
