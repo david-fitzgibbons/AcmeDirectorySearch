@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* keep scrollbar always on to prevent shaking when re-rendering lists of items*/
+html {
+  overflow-y: scroll;
+}
+
+.app-btn-outline {
+  color: #666;
+  border-color: #ced4da;
+}
+
+  .app-btn-outline:hover {
+    background-color: #65b3f4;
+    color: #fff;
+  }

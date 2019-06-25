@@ -43,9 +43,14 @@
     <Content Include="src\app\global-error.service.ts">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\app\sections\menu\menu.component.css" />
+    <Content Include="src\app\sections\menu\menu.component.html" />
+    <Content Include="src\app\sections\notifications\notification-container.component.css" />
+    <Content Include="src\app\sections\notifications\notification-container.component.html" />
     <Content Include="src\app\sections\notifications\notification.component.css" />
     <Content Include="src\app\sections\notifications\notification.component.html" />
     <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\assets\acme-logo.svg" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
     <Content Include="src\styles.css" />
@@ -87,14 +92,20 @@
     <TypeScriptCompile Include="src\app\models\address.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\app\models\app.error.ts">
+    <TypeScriptCompile Include="src\app\models\app-error.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\models\user.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\sections\menu\menu.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\notifications\notification-container.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\sections\notifications\notification-container.component.ts" />
     <TypeScriptCompile Include="src\app\sections\notifications\notification.component.spec.ts" />
     <TypeScriptCompile Include="src\app\sections\notifications\notification.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\notifications\remove.interface.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\services\error.service.spec.ts" />
     <TypeScriptCompile Include="src\app\services\error.service.ts" />
     <TypeScriptCompile Include="src\app\services\property.service.spec.ts" />

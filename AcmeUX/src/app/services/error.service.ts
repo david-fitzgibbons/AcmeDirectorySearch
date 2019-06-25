@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { AppError } from '../models/app.error';
+import { AppError } from '../models/app-error';
 
 
 
@@ -13,7 +13,7 @@ export class ErrorService {
   constructor() { }
 
   readonly clientErrorType: string = "Client Error";
-  readonly serverErrorType: string = "Server Error";
+  readonly serverErrorType: string = "Message Received from Server";
 
   public errorEvents: Subject<AppError> = new Subject();
 
@@ -28,13 +28,13 @@ export class ErrorService {
     let msg: string = error.status + ": " + error.message;
 
     if (error.error && error.error.Errors) {
-      msg = 'Error: ';
+      msg = '';
       for (let key in error.error.Errors) {
-        msg += `${key};`
+        msg += `${key}`
       }
     }
 
-    let err: AppError = new AppError(msg, this.serverErrorType, error.status + " " + this.serverErrorType);
+    let err: AppError = new AppError(msg, 'danger', this.serverErrorType);
     this.errorEvents.next(err);
   }
 

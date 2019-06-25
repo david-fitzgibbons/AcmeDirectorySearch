@@ -26,10 +26,6 @@ export class GlobalErrorHandler implements ErrorHandler {
     } else {
       errorService.emitClientError(error);
     }
-
-    // Always log errors to console
-    //console.error(error);
-
   }
 
 }
