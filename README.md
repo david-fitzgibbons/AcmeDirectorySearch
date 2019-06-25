@@ -46,7 +46,26 @@ Technologies used within the solution include
 	- _front-end test suite is not currently included in this branch_
 12. Type 'simona kiley kris' in to the search bar to see results
 	- Search has been delayed by 2 secs to show wait spinner 
-   
+
+## Seed Data
+
+Below individuals are seeded in to the system during the DB build and can be searched on out of the box
+
+| First Name | Last Name |
+| --- | --- |
+| Josephine | Darakjy |
+| Art | Venere |
+| Lenna | Paprocki |
+| Donette | Foller |
+| Simona | Morasca |
+| Mitsue | Tollner |
+| Leota | Dilliard |
+| Sage | Wieser |
+| Kris | Marrier |
+| Minna | Amigon |
+| Abel | Maclead |
+| Kiley | Caldarera |
+| Graciela | Ruta |
 
 ## Endpoint Examples
 - GET: /api/v1/property/states  :  Returns a list of states
