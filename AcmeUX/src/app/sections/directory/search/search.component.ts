@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { DirectoryService } from '../directory.service';
 
 @Component({
   selector: 'app-search',
@@ -9,7 +10,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class SearchComponent  {
 
-  constructor() { }
+  constructor(private directoryService: DirectoryService) { }
 
   private searchUpdatedObservable;
 
@@ -25,9 +26,9 @@ export class SearchComponent  {
     // instantiate the observable if not already created
     if (!this.searchUpdatedObservable) {
       const ob = new Observable(observer => { this.searchUpdatedObservable = observer; })
-        .pipe(debounceTime(250), distinctUntilChanged())  // debounce input and only continue if text is unique
-        // .switchMap((searchValue) => searchServiceAPI.search(searchValue))
-        .subscribe(console.log);
+        .pipe(debounceTime(2000), distinctUntilChanged())  // debounce input and only continue if text is unique
+        .pipe(switchMap((sourceValue) => this.directoryService.searchUsers(<string>sourceValue) ))
+        .subscribe(result => console.log('RESULT', result));
     }
 
     this.searchUpdatedObservable.next(newSearchValue);

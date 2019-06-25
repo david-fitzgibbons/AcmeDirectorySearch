@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from './../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User, IUser } from '../models/user';
 import { Address } from '../models/address';
@@ -40,8 +40,15 @@ export class UserService {
    */
   getUsers(filters: string[]): Observable<User[]> {
 
+    if (!filters.length) {
+      let tmp: User[] = [];
+      return of(tmp);
+    }
+
     let params = new HttpParams();
     filters.map(f => params = params.append('filter', f));
+
+    console.log(filters);
 
     return this.http.get<IUser[]>(this.userAPI, { params })
       .pipe(map(coll => coll.map(usr => this.userSerializer(usr) )));

@@ -130,6 +130,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\sections\directory\howto\howto.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\search.state.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\sections\directory\search\search.component.spec.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\search\search.component.ts" />
     <TypeScriptCompile Include="src\app\sections\menu\menu.component.ts" />
