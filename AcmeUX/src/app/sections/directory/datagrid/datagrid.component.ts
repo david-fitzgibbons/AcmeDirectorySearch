@@ -23,7 +23,7 @@ export class DatagridComponent implements OnInit {
   ngOnInit() {
     this.searchSubscription = this.directoryService.searchEvents.subscribe(data => {
       if (!data.isSearchOngoing) { this.updateResults(data.searchResults); }
-      else { this.searchIsOngoing = true; console.log('here'); }
+      else { this.searchIsOngoing = true; }
     });
 
     this.pager = this.pagerService.getPager(this.currentData);
