@@ -46,7 +46,7 @@ Technologies used within the solution include
 	
 - Navigate to https://localhost:4200   --- _note : using **https**_
 - Type 'simona kiley kris' in to the search bar to see results
-   - Search has been purposefully delayed by 2 secs to show wait spinner 
+   - Search has been delayed by 2 secs to show wait spinner 
     
 
 ## Endpoint Examples
