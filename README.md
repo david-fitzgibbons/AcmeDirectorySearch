@@ -45,10 +45,10 @@ Technologies used within the solution include
     	- go to chrome://flags/#allow-insecure-localhost and 'Allow Invalid certificates for resources loaded from localhost'
 	
 - Navigate to https://localhost:4200   --- _note : using **https**_
+   - _front-end test suite is not currently included in this branch_
 - Type 'simona kiley kris' in to the search bar to see results
    - Search has been delayed by 2 secs to show wait spinner 
-    
-- _front-end test suite is not currently included in this branch_
+   
 
 ## Endpoint Examples
 - GET: /api/v1/property/states  :  Returns a list of states
