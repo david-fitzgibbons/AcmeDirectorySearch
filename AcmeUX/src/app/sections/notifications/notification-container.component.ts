@@ -64,13 +64,13 @@ export class NotificationContainerComponent implements OnDestroy, RemoveNotifica
 
   removeNotification(index: number) {
 
-    const component = this.notifications.filter(x => x.instance.index == index)[0];
+    const component = this.notifications.filter(x => x.instance.index === index)[0];
     const viewIndex: number = this.viewContainerRef.indexOf(component);
 
     this.viewContainerRef.remove(viewIndex);
 
     // rebuild notifications array removing the component reference that was just destroyed
-    this.notifications = this.notifications.filter(x => x.instance.index != index);
+    this.notifications = this.notifications.filter(x => x.instance.index !== index);
 
     console.log(index);
 

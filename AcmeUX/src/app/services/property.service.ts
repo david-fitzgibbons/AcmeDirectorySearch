@@ -13,7 +13,7 @@ export class PropertyService {
   /**
    * Returns a list of states
    *
-   * @returns {Observable<string[]>} string[] of states
+   * @returns string[] of states
    */
   getStates(): Observable<string[]> {
     return this.http.get<string[]>(environment.apiUrl + '/v1/property/states');

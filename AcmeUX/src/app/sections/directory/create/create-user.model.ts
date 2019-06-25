@@ -1,18 +1,18 @@
 export class CreateUser {
 
-  firstName: string;
-  lastName: string;
-  birthday: Date;
-  interests: string | undefined;
+  FirstName: string;
+  LastName: string;
+  Birthday: Date;
+  Interests: string | undefined;
 
-  street1: string;
-  street2: string | undefined;
-  city: string;
-  state: string;
-  zip: string;
+  Street1: string;
+  Street2: string | undefined;
+  City: string;
+  State: string;
+  Zip: string;
 
-  imageType: string | undefined;
-  imageData: string | undefined;
+  ImageType: string | undefined;
+  ImageData: string | undefined;
 
   constructor() { }
 

@@ -2,3 +2,11 @@
 .ng-invalid.ng-touched {
   border-color: #dc3545;
 }
+
+.isWait {
+  cursor: wait;
+}
+
+.isWait *{
+  cursor: wait;
+}

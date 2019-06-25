@@ -126,6 +126,9 @@
     <TypeScriptCompile Include="src\app\sections\directory\create\create.component.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\directory.component.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\directory.module.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\directory.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\sections\directory\howto\howto.component.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\search\search.component.spec.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\search\search.component.ts" />

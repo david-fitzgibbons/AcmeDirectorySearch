@@ -29,7 +29,7 @@ export class ErrorService {
 
     if (error.error && error.error.Errors) {
       msg = '';
-      for (const key in error.error.Errors) {
+      for (const key of Object.keys(error.error.Errors)) {
         msg += `${key}`;
       }
     }

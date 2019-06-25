@@ -10,7 +10,7 @@ import { ErrorService } from './services/error.service';
  *
  * Modified to use an observable ErrorService that can be subscribed to by multiple components/services
  *
- * */
+ */
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {

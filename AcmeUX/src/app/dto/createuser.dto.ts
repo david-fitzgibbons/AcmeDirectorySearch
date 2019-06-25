@@ -16,11 +16,11 @@ export class CreateUserDTO  {
     this.birthday = new Date(birthday);
     this.interests = interests;
     this.address = {
-      street1: street1,
-      street2 : street2,
-      city: city,
-      state: state,
-      zip: zip
+      street1,
+      street2,
+      city,
+      state,
+      zip
     };
 
     // Attach image record if one was provided

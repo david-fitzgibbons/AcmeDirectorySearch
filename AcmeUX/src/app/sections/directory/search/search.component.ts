@@ -14,17 +14,17 @@ export class SearchComponent  {
   private searchUpdatedObservable;
 
   /**
- *
- * Handle the Search Bar text updates as a user is typing.  Debounce the input
- * to delay back-end searching until the user has stopped typing.
- *
- * @param newSearchValue
- */
+   *
+   * Handle the Search Bar text updates as a user is typing.  Debounce the input
+   * to delay back-end searching until the user has stopped typing.
+   *
+   * @param search string containing spaces to delineate search terms
+   */
   onSearchUpdated(newSearchValue: string) {
 
     // instantiate the observable if not already created
     if (!this.searchUpdatedObservable) {
-      Observable.create(observer => { this.searchUpdatedObservable = observer; })
+      const ob = new Observable(observer => { this.searchUpdatedObservable = observer; })
         .pipe(debounceTime(250), distinctUntilChanged())  // debounce input and only continue if text is unique
         // .switchMap((searchValue) => searchServiceAPI.search(searchValue))
         .subscribe(console.log);

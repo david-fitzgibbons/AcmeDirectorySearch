@@ -7,21 +7,23 @@ import { User, IUser } from '../models/user';
 import { Address } from '../models/address';
 import { CreateUserDTO } from '../dto/createuser.dto';
 import { MessageService } from './message.service';
+import { ErrorService } from './error.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http: HttpClient, private msgService: MessageService) { }
+  constructor(private http: HttpClient, private errService: ErrorService,
+    private msgService: MessageService) { }
 
   private userAPI: string = environment.apiUrl + '/v1/user';
 
   /**
    * Returns a specific user by id
-   * @param {number} id of the user to retrieve
+   * @param id of the user to retrieve
    *
-   * @returns {Observable<User>} observable containing User
+   * @returns observable containing User
    */
   getUser(id: number): Observable<User> {
     return this.http.get<IUser>(this.userAPI + `/${id}`)
@@ -32,9 +34,9 @@ export class UserService {
 
   /**
    * Returns a list of users based on filter critera
-   * @param {string[]} filters is string array of search terms
+   * @param filters is string array of search terms
    *
-   * @returns {Observable<User[]>} observable containing User[]
+   * @returns observable containing User[]
    */
   getUsers(filters: string[]): Observable<User[]> {
 
@@ -47,9 +49,9 @@ export class UserService {
 
   /**
    * Creates a new user record
-   * @param {CreateUserDTO} User is the new user to be created
+   * @param User is the new user to be created
    *
-   * @returns {Observable<User[]>} observable containing User[]
+   * @returns observable containing User[]
    */
   createUser(user: CreateUserDTO): Observable<User> {
     console.log('create user', user);

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PropertyService } from '../../../services/property.service';
 import { CreateUser } from './create-user.model';
 import { FormGroup } from '@angular/forms';
-import { MessageService } from '../../../services/message.service';
+import { DirectoryService } from '../directory.service';
+import { CreateUserDTO } from '../../../dto/createuser.dto';
 
 @Component({
   selector: 'app-create',
@@ -11,28 +11,30 @@ import { MessageService } from '../../../services/message.service';
 })
 export class CreateComponent implements OnInit {
 
-  constructor(private propertyService: PropertyService, private messageService: MessageService) { }
+  constructor(private directoryService: DirectoryService) { }
 
-
-  get diagnostic() { return JSON.stringify(this.newUser); }
-
-  form: FormGroup;
-
+  private isSaving = false;
   private isDialogVisible = false;
   private states: string[] = [];
 
   private newUser: CreateUser = new CreateUser();
 
   ngOnInit() {
-    this.propertyService.getStates().subscribe((data: string[]) => this.states = data);
+    this.directoryService.states.subscribe((data: string[]) => this.states = data);
   }
 
   onSubmit() {
-    console.log(this.diagnostic);
+    this.isSaving = true;
+    this.directoryService.createUser(this.newUser)
+      .subscribe(
+        (saved) => { this.resetUserData(); },
+        (err) => { this.isSaving = false; this.directoryService.emitError(err); });
   }
 
   resetUserData() {
     this.newUser = new CreateUser();
+    this.isSaving = false;
+    this.isDialogVisible = false;
   }
 
   onFileChange(event) {
@@ -41,13 +43,14 @@ export class CreateComponent implements OnInit {
       const file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
-        if (file.type != 'image/png' && file.type != 'image/jpeg') {
+        if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
           console.log(file);
           event.target.value = '';
-          this.messageService.emitWarning('Invalid Picture Format Selected', 'Only PNG and JPEG images for users are supported at this time');
+          this.directoryService.emitWarning('Invalid Picture Format Selected',
+            'Only PNG and JPEG images for users are supported at this time');
         } else {
-          this.newUser.imageType = file.type;
-          this.newUser.imageData = ((reader.result) as string).split(',')[1];
+          this.newUser.ImageType = file.type;
+          this.newUser.ImageData = ((reader.result) as string).split(',')[1];
         }
       };
     }

@@ -2,7 +2,7 @@
   <span class="px-1 font-weight-bold">+</span>
 </button>
 
-<div class="modal" tabindex="-1" role="dialog" [style.display]="isDialogVisible ? 'block' : 'none'">
+<div class="modal" tabindex="-1" role="dialog" [class.isWait]="isSaving"  [style.display]="isDialogVisible ? 'block' : 'none'">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content shadow-lg">
 
