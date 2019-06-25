@@ -12,7 +12,12 @@ export class MessageService {
   public messageEvents: Subject<AppMessage> = new Subject();
 
   emitMessage(title: string, message: string) {
-    let err: AppMessage = new AppMessage(message, '', title);
+    const err: AppMessage = new AppMessage(message, '', title);
+    this.messageEvents.next(err);
+  }
+
+  emitWarning(title: string, message: string) {
+    const err: AppMessage = new AppMessage(message, 'warning', title);
     this.messageEvents.next(err);
   }
 }

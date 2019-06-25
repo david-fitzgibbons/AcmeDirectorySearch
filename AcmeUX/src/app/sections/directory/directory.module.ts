@@ -5,12 +5,14 @@ import { DirectoryRoutingModule } from './directory-routing.module';
 import { HowtoComponent } from './howto/howto.component';
 import { SearchComponent } from './search/search.component';
 import { CreateComponent } from './create/create.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [DirectoryComponent, HowtoComponent, SearchComponent, CreateComponent],
   imports: [
     CommonModule,
-    DirectoryRoutingModule
+    DirectoryRoutingModule,
+    FormsModule
   ]
 })
 export class DirectoryModule { }

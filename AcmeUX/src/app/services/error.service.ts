@@ -12,29 +12,29 @@ export class ErrorService {
 
   constructor() { }
 
-  readonly clientErrorType: string = "Client Error";
-  readonly serverErrorType: string = "Message Received from Server";
+  readonly clientErrorType: string = 'Client Error';
+  readonly serverErrorType: string = 'Message Received from Server';
 
   public errorEvents: Subject<AppError> = new Subject();
 
   emitClientError(error: Error) {
-    console.log("From Error App :: ", error);
-    let err: AppError = new AppError(error.message, 'danger', this.clientErrorType, error.stack);
+    console.log('From Error App :: ', error);
+    const err: AppError = new AppError(error.message, 'danger', this.clientErrorType, error.stack);
     this.errorEvents.next(err);
   }
 
   emitServerError(error: HttpErrorResponse) {
- 
-    let msg: string = error.status + ": " + error.message;
+
+    let msg: string = error.status + ': ' + error.message;
 
     if (error.error && error.error.Errors) {
       msg = '';
-      for (let key in error.error.Errors) {
-        msg += `${key}`
+      for (const key in error.error.Errors) {
+        msg += `${key}`;
       }
     }
 
-    let err: AppError = new AppError(msg, 'danger', this.serverErrorType);
+    const err: AppError = new AppError(msg, 'danger', this.serverErrorType);
     this.errorEvents.next(err);
   }
 

@@ -7,7 +7,7 @@ export class AppError implements MessageInterface {
   private message: string;
   private description: string;
 
-  constructor(message: string, type: string, title: string = "Error", description: string = "") {
+  constructor(message: string, type: string, title: string = 'Error', description: string = '') {
     this.message = message;
     this.type = 'danger';
     this.title = title;

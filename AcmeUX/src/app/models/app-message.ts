@@ -7,9 +7,9 @@ export class AppMessage implements MessageInterface {
   private message: string;
   private description: string;
 
-  constructor(message: string, type: string, title: string = "Error", description: string = "") {
+  constructor(message: string, type: string = 'success', title: string = '', description: string = '') {
     this.message = message;
-    this.type = 'success';
+    this.type = type;
     this.title = title;
     this.description = description;
   }

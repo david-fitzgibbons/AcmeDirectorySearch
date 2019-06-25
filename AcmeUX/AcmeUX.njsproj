@@ -119,6 +119,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\sections\about\about.component.ts" />
+    <TypeScriptCompile Include="src\app\sections\directory\create\create-user.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\sections\directory\create\create.component.spec.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\create\create.component.ts" />
     <TypeScriptCompile Include="src\app\sections\directory\directory.component.ts" />

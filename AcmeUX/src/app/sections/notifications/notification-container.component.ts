@@ -19,14 +19,14 @@ export class NotificationContainerComponent implements OnDestroy, RemoveNotifica
 
   @ViewChild('dynamic', { read: ViewContainerRef, static: true }) viewContainerRef: ViewContainerRef;
   private factoryResolver: ComponentFactoryResolver;
-  private notificationId: number = 0;
+  private notificationId = 0;
   private notifications: Array<any> = [];
 
   private errorSubscription: Subscription;
   private messageSubscription: Subscription;
 
   constructor(@Inject(ComponentFactoryResolver) factoryResolver,
-    private errorService: ErrorService, private messageService: MessageService) {
+              private errorService: ErrorService, private messageService: MessageService) {
 
     this.factoryResolver = factoryResolver;
     this.errorSubscription = errorService.errorEvents.subscribe(error => this.addNotification(error));
@@ -41,9 +41,9 @@ export class NotificationContainerComponent implements OnDestroy, RemoveNotifica
   addNotification(notification: MessageInterface) {
 
     // dynamically instantiate a new instance of a child notification
-    let factory = this.factoryResolver.resolveComponentFactory(NotificationComponent);
-    let component: ComponentRef<NotificationComponent> = factory.create(this.viewContainerRef.parentInjector);
-    let componentInstance: NotificationComponent = component.instance;
+    const factory = this.factoryResolver.resolveComponentFactory(NotificationComponent);
+    const component: ComponentRef<NotificationComponent> = factory.create(this.viewContainerRef.parentInjector);
+    const componentInstance: NotificationComponent = component.instance;
 
     // setup bindings to be able to remove the child notifications on close
     componentInstance.index = ++this.notificationId;
@@ -64,12 +64,12 @@ export class NotificationContainerComponent implements OnDestroy, RemoveNotifica
 
   removeNotification(index: number) {
 
-    let component = this.notifications.filter(x => x.instance.index == index)[0];
-    let viewIndex: number = this.viewContainerRef.indexOf(component);
+    const component = this.notifications.filter(x => x.instance.index == index)[0];
+    const viewIndex: number = this.viewContainerRef.indexOf(component);
 
     this.viewContainerRef.remove(viewIndex);
 
-    //rebuild notifications array removing the component reference that was just destroyed
+    // rebuild notifications array removing the component reference that was just destroyed
     this.notifications = this.notifications.filter(x => x.instance.index != index);
 
     console.log(index);
