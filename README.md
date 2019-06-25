@@ -16,19 +16,19 @@ Technologies used within the solution include
 
 
 ## Quick Start
-- Open Visual Studio and Choose Clone or Checkout Code
+1. Open Visual Studio and Choose Clone or Checkout Code
     - https://github.com/david-fitzgibbons/AcmeDirectorySearch.git
-- Open CLI in the AcmeUX project directory
+2. Open CLI in the AcmeUX project directory
     - _Assumes NPM and Angular CLI are installed globally_
-- Run $ npm install
+3. Run $ npm install
     - command will take ~10 minutes to complete
     - keep the CLI open, it will be used in a later step
-- Build the Solution 
-- Run the solution using **Docker-Compose** as the startup project
+4. Build the Solution 
+5. Run the solution using **Docker-Compose** as the startup project
     - **_Note: The database binds to the host on port 1433_**
     - This step initializes the containers and binds Docker-Compse to those container instances
-- Stop the project
-- On the AcmeDatabase project
+6. Stop the project
+7. On the AcmeDatabase project
     - Right click and 'Publish...'
     - Target Database Connection:
         - Server Name: localhost
@@ -37,17 +37,15 @@ Technologies used within the solution include
         - Password: T3mp0rary!
     - Database Name: Acme
     - Click Publish
-- Run the AcmeTest test suite
-
-- Run the **Docker-Compose** project 
-- With the CLI open in the AcmeUX directory run $ ng serve --ssl
+8. Run the AcmeTest test suite, confirm all tests successful
+9. Run the **Docker-Compose** project 
+10. With the CLI open in the AcmeUX directory run $ ng serve --ssl
     - _if you want to ignore localhost certificate errors in Chrome_
     	- go to chrome://flags/#allow-insecure-localhost and 'Allow Invalid certificates for resources loaded from localhost'
-	
-- Navigate to https://localhost:4200   --- _note : using **https**_
-   - _front-end test suite is not currently included in this branch_
-- Type 'simona kiley kris' in to the search bar to see results
-   - Search has been delayed by 2 secs to show wait spinner 
+11. Navigate to https://localhost:4200   --- _note : using **https**_
+	- _front-end test suite is not currently included in this branch_
+12. Type 'simona kiley kris' in to the search bar to see results
+	- Search has been delayed by 2 secs to show wait spinner 
    
 
 ## Endpoint Examples
