@@ -1,6 +1,12 @@
 import { Component, OnInit, Input, ViewContainerRef } from '@angular/core';
 import { RemoveNotification } from './remove.interface';
 
+/**
+ * A dynamically created component managed by NotificationContainer
+ * for displaying notifications at the Application level for
+ * either errors or general messages
+ *
+ */
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',

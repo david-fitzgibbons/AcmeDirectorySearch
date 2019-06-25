@@ -15,7 +15,7 @@ import { ErrorService } from './error.service';
 export class UserService {
 
   constructor(private http: HttpClient, private errService: ErrorService,
-    private msgService: MessageService) { }
+              private msgService: MessageService) { }
 
   private userAPI: string = environment.apiUrl + '/v1/user';
 
@@ -41,7 +41,7 @@ export class UserService {
   getUsers(filters: string[]): Observable<User[]> {
 
     if (!filters.length) {
-      let tmp: User[] = [];
+      const tmp: User[] = [];
       return of(tmp);
     }
 

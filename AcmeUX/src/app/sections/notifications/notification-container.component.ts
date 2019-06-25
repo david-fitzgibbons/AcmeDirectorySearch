@@ -17,6 +17,7 @@ import { MessageInterface } from '../../interfaces/message.interface';
 })
 export class NotificationContainerComponent implements OnInit, OnDestroy, RemoveNotification {
 
+  // Bind ViewContinerRef and ComponentFactoryResolver for dynamic creation of notification components
   @ViewChild('dynamic', { read: ViewContainerRef, static: true }) viewContainerRef: ViewContainerRef;
   private factoryResolver: ComponentFactoryResolver;
   private notificationId = 0;
@@ -41,6 +42,12 @@ export class NotificationContainerComponent implements OnInit, OnDestroy, Remove
     this.messageSubscription.unsubscribe();
   }
 
+  /**
+   * Adds a notification component dynamically to the application. Multiple notifications
+   * can exist at the same time and will display in succession
+   *
+   * @param notification is the notification to show - either error / message
+   */
   addNotification(notification: MessageInterface) {
 
     // dynamically instantiate a new instance of a child notification
@@ -64,7 +71,10 @@ export class NotificationContainerComponent implements OnInit, OnDestroy, Remove
     component.changeDetectorRef.detectChanges();
   }
 
-
+  /**
+   * Remove the notification when the close button on the child is clicked.  The
+   * container acts as the manager for all dynamically created components
+   */
   removeNotification(index: number) {
 
     const component = this.notifications.filter(x => x.instance.index === index)[0];

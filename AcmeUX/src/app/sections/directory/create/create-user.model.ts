@@ -1,3 +1,7 @@
+/**
+ * Form Model for collecting the data
+ * specific to the Create component
+ */
 export class CreateUser {
 
   FirstName: string;

@@ -29,10 +29,10 @@ export class SearchComponent  {
     if (!this.searchUpdatedObservable) {
       Observable.create(observer => { this.searchUpdatedObservable = observer; })
         .pipe(debounceTime(2000), distinctUntilChanged())  // debounce input and only continue if text is unique
-        .pipe(switchMap((sourceValue) => this.directoryService.searchUsers(<string>sourceValue)))
+        .pipe(switchMap((sourceValue) => this.directoryService.searchUsers(sourceValue as string)))
         .subscribe();
     }
-    
+
     this.searchUpdatedObservable.next(newSearchValue);
 
   }

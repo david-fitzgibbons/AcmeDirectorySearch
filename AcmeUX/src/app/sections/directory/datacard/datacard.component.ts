@@ -2,6 +2,9 @@ import { Component, Input } from '@angular/core';
 import { IUser } from '../../../models/user';
 import { environment } from './../../../../environments/environment';
 
+/**
+ * Represents and individual user within the search results grid
+ */
 @Component({
   selector: '[app-datacard]',
   templateUrl: './datacard.component.html',

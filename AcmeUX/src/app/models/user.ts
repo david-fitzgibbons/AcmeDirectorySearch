@@ -1,5 +1,9 @@
 import { IAddress } from './address';
 
+/**
+ * Interface and Model definitions of an Address
+ *
+ */
 export interface IUser {
 
   id: number | undefined;

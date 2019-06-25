@@ -1,3 +1,8 @@
+/**
+ * Pager model that works with the PagerService
+ * for creating paged lists out of Array's
+ *
+ */
 export class Pager {
   private pagedItemList: Array<any>;
   private totalPages: number;

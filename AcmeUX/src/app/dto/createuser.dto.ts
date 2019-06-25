@@ -1,3 +1,10 @@
+
+/**
+ * CreateUserDTO is used for transfering data from UX components
+ * to the service layer creating a contract of the information
+ * required for submitting to the API
+ *
+ */
 export class CreateUserDTO  {
 
   firstName: string;

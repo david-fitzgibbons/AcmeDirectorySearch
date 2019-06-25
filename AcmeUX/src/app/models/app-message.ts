@@ -1,5 +1,11 @@
 import { MessageInterface } from '../interfaces/message.interface';
 
+/**
+ * Model part of the global error/messaging bus.  This model
+ * is the structure of any message information that is
+ * pushed through the system - whether success or warnings
+ *
+ */
 export class AppMessage implements MessageInterface {
 
   private title: string;

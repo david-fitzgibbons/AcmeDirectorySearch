@@ -1,4 +1,8 @@
 
+/**
+ * Interface and Model definitions of an Address
+ *
+ */
 export interface IAddress {
   street1: string;
   street2: string | undefined;
