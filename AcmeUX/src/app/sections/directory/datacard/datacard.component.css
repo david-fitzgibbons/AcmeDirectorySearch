@@ -1,0 +1,14 @@
+.userAge {
+  box-sizing: border-box;
+  font-size: .8em;
+  position: absolute;
+  top: -1.2rem;
+  height: 1.2rem;
+  right: 0;
+  padding: 0 .5em;
+  border: 1px solid rgba(0,0,0,.125);
+  border-top-left-radius: .25rem;
+  background-color: #fff;
+  border-bottom-width: 0;
+  border-right-width: 0;
+}

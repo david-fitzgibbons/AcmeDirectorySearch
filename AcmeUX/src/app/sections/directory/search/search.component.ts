@@ -23,13 +23,16 @@ export class SearchComponent  {
    */
   onSearchUpdated(newSearchValue: string) {
 
+    this.directoryService.emitSearchState(true);
+
     // instantiate the observable if not already created
     if (!this.searchUpdatedObservable) {
-      const ob = new Observable(observer => { this.searchUpdatedObservable = observer; })
+      Observable.create(observer => { this.searchUpdatedObservable = observer; })
         .pipe(debounceTime(2000), distinctUntilChanged())  // debounce input and only continue if text is unique
-        .pipe(switchMap((sourceValue) => this.directoryService.searchUsers(<string>sourceValue)));
+        .pipe(switchMap((sourceValue) => this.directoryService.searchUsers(<string>sourceValue)))
+        .subscribe();
     }
-
+    
     this.searchUpdatedObservable.next(newSearchValue);
 
   }

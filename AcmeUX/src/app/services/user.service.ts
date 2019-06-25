@@ -48,8 +48,6 @@ export class UserService {
     let params = new HttpParams();
     filters.map(f => params = params.append('filter', f));
 
-    console.log(filters);
-
     return this.http.get<IUser[]>(this.userAPI, { params })
       .pipe(map(coll => coll.map(usr => this.userSerializer(usr) )));
   }

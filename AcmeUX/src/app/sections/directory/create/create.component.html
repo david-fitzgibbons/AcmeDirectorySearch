@@ -71,7 +71,7 @@
           <div class="modal-footer">
             <!--<button type="button" class="btn btn-danger mr-auto">Delete Person</button>-->
             <button type="reset" class="btn btn-secondary" (click)="createForm.reset(); imageField.value=''; isDialogVisible = false; resetUserData()" data-dismiss="modal">Cancel</button>
-            <button type="submit" (click)="onSubmit()" [disabled]="!createForm.form.valid" class="btn btn-primary">Save Changes</button>
+            <button type="submit" (click)="onSubmit(); imageField.value='';" [disabled]="!createForm.form.valid" class="btn btn-primary">Save Changes</button>
           </div>
 
         </form>

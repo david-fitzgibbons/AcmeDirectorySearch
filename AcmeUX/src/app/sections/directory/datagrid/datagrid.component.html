@@ -1,3 +1,25 @@
-<p>
-  datagrid works!
-</p>
+<div class="searchWrapper">
+  <div class="searchSpinner" [class.isVisible]="searchIsOngoing"><div class="rollerwrap"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div></div>
+  <!-- No Results / First Load -->
+  <div class="container" *ngIf="isFirstRender">
+    <p>Perform a search above to see a list of matching results</p>
+  </div>
+  <div class="container" *ngIf="pager.getTotalItems() == 0">
+    <p>&nbsp;</p>
+    <p class="font-italic">No one to display, use the search above to modify your search</p>
+  </div>
+
+  <!-- Paging Section -->
+  <div class="container clearfix">
+    <div class="float-right align-middle">
+      <span class="align-middle" *ngIf="pager.getCurrentPage() > 1" (click)="changePage(pager.getCurrentPage() - 1)" style="font-weight: bold; font-size: 2em; color: #AAA; cursor: pointer;"> &#x25C2; </span>
+      <span class="align-middle" *ngIf="pager.getTotalItems() > 0">Page {{pager.getCurrentPage()}} of {{pager.getTotalPages()}}</span>
+      <span class="align-middle" *ngIf="pager.getCurrentPage() < pager.getTotalPages()" (click)="changePage(pager.getCurrentPage() + 1)" style="font-weight: bold; font-size: 2em; color: #AAA; cursor: pointer;"> &#x25B8; </span>
+    </div>
+  </div>
+
+  <!-- Data Grid-->
+  <div class="card-deck">
+    <div class="card" *ngFor="let user of pager.getPagedItemList()" app-datacard [userData]="user"></div>
+  </div>
+</div>

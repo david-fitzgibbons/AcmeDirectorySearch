@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PagerService } from '../../../services/pager.service';
 import { DirectoryService } from '../directory.service';
 import { Pager } from '../../../models/pager';
+import { Subscription } from 'rxjs';
+import { IUser } from '../../../models/user';
 
 @Component({
   selector: 'app-datagrid',
@@ -10,19 +12,35 @@ import { Pager } from '../../../models/pager';
 })
 export class DatagridComponent implements OnInit {
 
-  private isFirstRender = false;
-  private numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21
-  private pager: Pager;
+  constructor(private pagerService: PagerService, private directoryService: DirectoryService) {  }
 
-  constructor(private pagerService: PagerService, private directoryService: DirectoryService) { }
+  private currentData: IUser[] = [];
+  private searchSubscription: Subscription;
+  searchIsOngoing: boolean = false;
+  pager: Pager;
+
 
   ngOnInit() {
-    this.pager = this.pagerService.getPager(this.numbers);
+    this.searchSubscription = this.directoryService.searchEvents.subscribe(data => {
+      if (!data.isSearchOngoing) { this.updateResults(data.searchResults); }
+      else { this.searchIsOngoing = true; console.log('here'); }
+    });
+
+    this.pager = this.pagerService.getPager(this.currentData);
+  }
+
+  ngOnDestroy() {
+    this.searchSubscription.unsubscribe();
+  }
+
+  updateResults(searchResults: IUser[]) {
+    this.currentData = searchResults;
+    this.pager = this.pagerService.getPager(searchResults);
+    this.searchIsOngoing = false;
   }
 
   changePage(page: number) {
-    this.pager = this.pagerService.getPager(this.numbers, page);
-    this.apiService.search("john").subscribe(data => console.log(data));
+    this.pager = this.pagerService.getPager(this.currentData, page);
   }
 
 }

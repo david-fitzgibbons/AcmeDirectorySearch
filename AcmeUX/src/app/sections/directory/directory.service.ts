@@ -9,7 +9,7 @@ import { IUser } from '../../models/user';
 import { ErrorService } from '../../services/error.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { SearchState } from './search.state';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -38,12 +38,13 @@ export class DirectoryService {
     return this.userService.createUser(dto);
   }
 
-  searchUsers(search: string, useLastSearch: boolean = false): Observable<IUser[]> {
+  rerunLastSearch() {
+    this.searchUsers(this.lastSearch).subscribe();
+  }
 
-    if (useLastSearch) {
-      search = this.lastSearch;
-    }
+  searchUsers(search: string): Observable<IUser[]> {
 
+    this.emitSearchState(true);
     this.lastSearch = search;
 
     let filters:string[] = [];
@@ -52,11 +53,11 @@ export class DirectoryService {
     }
 
     return this.userService.getUsers(filters)
-      .pipe(map(data => this.emitSearchState(false, data)));
+      .pipe(tap(data => this.emitSearchState(false, data)));
   }
 
-  emitSearchState(newState: boolean, results: IUser[]) {
-    const state: SearchState = new SearchState(newState, results);
+  emitSearchState(isSearchOngoing: boolean, results: IUser[] = []) {
+    const state: SearchState = new SearchState(isSearchOngoing, results);
     this.searchEvents.next(state);
   }
 

@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit {
     this.isSaving = true;
     this.directoryService.createUser(this.newUser)
       .subscribe(
-        (saved) => { this.resetUserData(); this.directoryService.searchUsers('', true); },
+        (saved) => { this.resetUserData(); this.directoryService.rerunLastSearch(); },
         (err) => { this.isSaving = false; this.directoryService.emitError(err); });
   }
 

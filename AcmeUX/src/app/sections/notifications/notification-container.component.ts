@@ -1,4 +1,4 @@
-import { Inject, Component, ComponentRef, OnDestroy, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { Inject, Component, ComponentRef, OnDestroy, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NotificationComponent } from './notification.component';
 import { ErrorService } from '../../services/error.service';
@@ -15,7 +15,7 @@ import { MessageInterface } from '../../interfaces/message.interface';
   templateUrl: './notification-container.component.html',
   styleUrls: ['./notification-container.component.css']
 })
-export class NotificationContainerComponent implements OnDestroy, RemoveNotification {
+export class NotificationContainerComponent implements OnInit, OnDestroy, RemoveNotification {
 
   @ViewChild('dynamic', { read: ViewContainerRef, static: true }) viewContainerRef: ViewContainerRef;
   private factoryResolver: ComponentFactoryResolver;
@@ -29,13 +29,16 @@ export class NotificationContainerComponent implements OnDestroy, RemoveNotifica
               private errorService: ErrorService, private messageService: MessageService) {
 
     this.factoryResolver = factoryResolver;
-    this.errorSubscription = errorService.errorEvents.subscribe(error => this.addNotification(error));
-    this.messageSubscription = messageService.messageEvents.subscribe(msg => this.addNotification(msg));
+  }
+
+  ngOnInit() {
+    this.errorSubscription = this.errorService.errorEvents.subscribe(error => this.addNotification(error));
+    this.messageSubscription = this.messageService.messageEvents.subscribe(msg => this.addNotification(msg));
   }
 
   ngOnDestroy() {
-    this.errorService.errorEvents.unsubscribe();
-    this.messageService.messageEvents.unsubscribe();
+    this.errorSubscription.unsubscribe();
+    this.messageSubscription.unsubscribe();
   }
 
   addNotification(notification: MessageInterface) {
