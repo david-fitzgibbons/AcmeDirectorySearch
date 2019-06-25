@@ -54,7 +54,7 @@ export class UserService {
    * @returns observable containing User[]
    */
   createUser(user: CreateUserDTO): Observable<User> {
-    console.log('create user', user);
+
     return this.http.post<IUser>(this.userAPI, user)
       .pipe(map(resp => {
         return this.userSerializer(resp);

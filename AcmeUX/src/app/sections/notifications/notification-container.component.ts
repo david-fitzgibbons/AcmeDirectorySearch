@@ -71,9 +71,6 @@ export class NotificationContainerComponent implements OnDestroy, RemoveNotifica
 
     // rebuild notifications array removing the component reference that was just destroyed
     this.notifications = this.notifications.filter(x => x.instance.index !== index);
-
-    console.log(index);
-
   }
 
 
