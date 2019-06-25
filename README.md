@@ -26,7 +26,6 @@ Technologies used within the solution include
 - Build the Solution 
 - Run the solution using **Docker-Compose** as the startup project
     - **_Note: The database binds to the host on port 1433_**
-    	- If a container is already listening bound on this port it can be stopped / removed with docker stop #containerid and docker rm #container id
     - This step initializes the containers and binds Docker-Compse to those container instances
 - Stop the project
 - On the AcmeDatabase project
@@ -40,7 +39,7 @@ Technologies used within the solution include
     - Click Publish
 - Run the AcmeTest test suite
 
-- Run the Docker Compose project again to test the API endpoints
+- Run the **Docker-Compose** project 
 - With the CLI open in the AcmeUX directory run $ ng serve --ssl
     - _if you want to ignore localhost certificate errors in Chrome_
     	- go to chrome://flags/#allow-insecure-localhost and 'Allow Invalid certificates for resources loaded from localhost'
