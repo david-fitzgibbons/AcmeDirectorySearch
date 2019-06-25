@@ -12,4 +12,6 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
+  private isDialogVisible = false;
+
 }

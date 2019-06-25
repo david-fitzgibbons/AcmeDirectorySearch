@@ -1,3 +1,31 @@
-<p>
-  howto works!
-</p>
+<button (click)="isDialogVisible = true" type="button" class="btn app-btn-outline btn-lg mx-1">
+  <span class="px-1 font-weight-bold">?</span>
+</button>
+
+<div class="modal" tabindex="-1" role="dialog" [style.display]="isDialogVisible ? 'block' : 'none'">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title">Directory Management How To</h5>
+        <button type="button" class="close" (click)="isDialogVisible = false" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-4">ACME Directory Management allows for the searching and adding new people to the directory.</p>
+        <h6>Searching:</h6>
+        <p>
+          To search for individuals, type part of either their first or last name in to the search bar.
+          The search performs dynamically and will display the results of individuals found as you type.
+        </p>
+        <p class="mb-5">
+          Spaces within the search term will behave as distinct separate searches, therefore a search for 'george burns' will return all results of people with the name 'George' and those with the name 'Burns'
+        </p>
+        <h6>Adding New People:</h6>
+        <p class="mb-5">
+          To add a new person, click the green plus button to the right of the search bar.  This will allow you to provide information about the new person you wish to add.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-howto',
-  templateUrl: './howto.component.html',
-  styleUrls: ['./howto.component.css']
+  templateUrl: './howto.component.html'
 })
-export class HowtoComponent implements OnInit {
+export class HowtoComponent {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  // toggle modal popup displaying help text
+  private isDialogVisible = false;
 
 }
