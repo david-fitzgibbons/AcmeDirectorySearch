@@ -1,6 +1,6 @@
 import { MessageInterface } from '../interfaces/message.interface';
 
-export class AppError implements MessageInterface {
+export class AppMessage implements MessageInterface {
 
   private title: string;
   private type: string;
@@ -9,7 +9,7 @@ export class AppError implements MessageInterface {
 
   constructor(message: string, type: string, title: string = "Error", description: string = "") {
     this.message = message;
-    this.type = 'danger';
+    this.type = 'success';
     this.title = title;
     this.description = description;
   }

@@ -2,8 +2,9 @@ import { Inject, Component, ComponentRef, OnDestroy, ViewChild, ViewContainerRef
 import { Subscription } from 'rxjs';
 import { NotificationComponent } from './notification.component';
 import { ErrorService } from '../../services/error.service';
-import { AppError } from '../../models/app-error';
 import { RemoveNotification } from './remove.interface';
+import { MessageService } from '../../services/message.service';
+import { MessageInterface } from '../../interfaces/message.interface';
 
 /**
  * Container for managing the displaying of Notifications for
@@ -22,21 +23,22 @@ export class NotificationContainerComponent implements OnDestroy, RemoveNotifica
   private notifications: Array<any> = [];
 
   private errorSubscription: Subscription;
+  private messageSubscription: Subscription;
 
-  constructor(@Inject(ComponentFactoryResolver) factoryResolver, private errorService: ErrorService) {
+  constructor(@Inject(ComponentFactoryResolver) factoryResolver,
+    private errorService: ErrorService, private messageService: MessageService) {
+
     this.factoryResolver = factoryResolver;
-    this.errorSubscription = errorService.errorEvents.subscribe(error => this.addErrorNotification(error));
+    this.errorSubscription = errorService.errorEvents.subscribe(error => this.addNotification(error));
+    this.messageSubscription = messageService.messageEvents.subscribe(msg => this.addNotification(msg));
   }
 
   ngOnDestroy() {
     this.errorService.errorEvents.unsubscribe();
+    this.messageService.messageEvents.unsubscribe();
   }
 
-  addErrorNotification(error: AppError) {
-    this.addNotification(error.getType(), error.getTitle(), error.getMessage());
-  }
-
-  addNotification(type: string, title: string, message: string, footer?: string) {
+  addNotification(notification: MessageInterface) {
 
     // dynamically instantiate a new instance of a child notification
     let factory = this.factoryResolver.resolveComponentFactory(NotificationComponent);
@@ -47,7 +49,7 @@ export class NotificationContainerComponent implements OnDestroy, RemoveNotifica
     componentInstance.index = ++this.notificationId;
     componentInstance.notificationManager = this;
 
-    componentInstance.setData(type, title, message);
+    componentInstance.setData(notification.getType(), notification.getTitle(), notification.getMessage());
 
     // add reference of componenet to array to manage during close events
     this.notifications.push(component);

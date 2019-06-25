@@ -71,6 +71,7 @@
     <Folder Include="src\app\" />
     <Folder Include="src\app\models\" />
     <Folder Include="src\app\dto\" />
+    <Folder Include="src\app\interfaces\" />
     <Folder Include="src\app\sections\" />
     <Folder Include="src\app\sections\about\" />
     <Folder Include="src\app\sections\menu\" />
@@ -89,10 +90,16 @@
     <TypeScriptCompile Include="src\app\dto\createuser.dto.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\interfaces\message.interface.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\models\address.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\models\app-error.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\models\app-message.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\models\user.ts">
@@ -109,6 +116,8 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\services\error.service.spec.ts" />
     <TypeScriptCompile Include="src\app\services\error.service.ts" />
+    <TypeScriptCompile Include="src\app\services\message.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\message.service.ts" />
     <TypeScriptCompile Include="src\app\services\property.service.spec.ts" />
     <TypeScriptCompile Include="src\app\services\property.service.ts" />
     <TypeScriptCompile Include="src\app\services\user.service.spec.ts" />

@@ -6,13 +6,14 @@ import { map } from 'rxjs/operators';
 import { User, IUser } from '../models/user';
 import { Address } from '../models/address';
 import { CreateUserDTO } from '../dto/createuser.dto';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private msgService: MessageService) { }
 
   private userAPI: string = environment.apiUrl + '/v1/user';
 
@@ -56,6 +57,14 @@ export class UserService {
       .pipe(map(resp => {
         return this.userSerializer(resp);
       }))
+      .pipe(map(resp => {
+        this.emitMessage('User Created', `Successfully created new user { ${resp.id} : ${resp.firstName} ${resp.lastName}`);
+        return resp;
+      }));
+  }
+
+  private emitMessage(title: string, msg: string) {
+    this.msgService.emitMessage(title, msg);
   }
 
 
