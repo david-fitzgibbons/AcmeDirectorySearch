@@ -18,8 +18,8 @@ export class ErrorService {
   public errorEvents: Subject<AppError> = new Subject();
 
   emitClientError(error: Error) {
-    console.log("From Error Service :: ", error);
-    let err: AppError = new AppError(error.message, this.clientErrorType, this.clientErrorType, error.stack);
+    console.log("From Error App :: ", error);
+    let err: AppError = new AppError(error.message, 'danger', this.clientErrorType, error.stack);
     this.errorEvents.next(err);
   }
 

@@ -8,18 +8,25 @@ import { GlobalErrorHandler } from './global-error.service';
 import { NotificationContainerComponent } from './sections/notifications/notification-container.component';
 import { NotificationComponent } from './sections/notifications/notification.component';
 import { MenuComponent } from './sections/menu/menu.component';
+import { AboutComponent } from './sections/about/about.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotificationContainerComponent,
     NotificationComponent,
-    MenuComponent
+    MenuComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'about', component: AboutComponent },
+      { path: '*', redirectTo: '/directory' },
+    ])
   ],
   providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],
   bootstrap: [AppComponent],
